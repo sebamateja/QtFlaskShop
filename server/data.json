@@ -1,0 +1,29 @@
+{
+    "products":[
+        {
+            "name":"Chleb",
+            "price":450,
+            "weight":0.5
+        },
+        {
+            "name":"Piwo",
+            "price":350,
+            "weight":0.5
+        },
+        {
+            "name":"Mleko",
+            "price":400,
+            "weight":0.5
+        }
+        ,{
+            "name":"Margaryna",
+            "price":250,
+            "weight":0.5
+        }
+        ,{
+            "name":"Sok",
+            "price":390,
+            "weight":0.5
+        }
+    ]
+}
