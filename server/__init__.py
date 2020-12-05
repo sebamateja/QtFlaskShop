@@ -1,2 +1,2 @@
 from .product import Product
-from .shopppingCart import ShoppingCart
+from .shoppingCart import ShoppingCart

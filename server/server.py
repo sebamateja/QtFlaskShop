@@ -2,7 +2,7 @@ from flask import Flask
 from flask import jsonify
 import json
 from .product import Product
-from .shopppingCart import ShoppingCart
+from .shoppingCart import ShoppingCart
 app = Flask(__name__)
 
 offer = []
