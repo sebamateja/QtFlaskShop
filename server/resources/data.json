@@ -1,0 +1,34 @@
+{
+    "products":[
+        {
+            "productId":1,
+            "productName":"Chleb",
+            "productPrice":450,
+            "productWeight":0.5
+        },
+        {
+            "productId":2,
+            "productName":"Piwo",
+            "productPrice":350,
+            "productWeight":0.5
+        },
+        {
+            "productId":3,
+            "productName":"Mleko",
+            "productPrice":400,
+            "productWeight":0.5
+        },
+        {
+            "productId":4,
+            "productName":"Margaryna",
+            "productPrice":250,
+            "productWeight":0.5
+        },
+        {
+            "productId":5,
+            "productName":"Sok",
+            "productPrice":390,
+            "productWeight":0.5
+        }
+    ]
+}
