@@ -6,6 +6,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include "Product.h"
 #include "ShopOfferModel.h"
 
 class ShopService : public QObject
@@ -30,5 +31,7 @@ private:
     QJsonArray readJsonData(const QString &filename);
     void populateShopOfferModel();
 };
+
+Q_DECLARE_METATYPE(QList<Product*>*)
 
 #endif // SHOPSERVICE_H
