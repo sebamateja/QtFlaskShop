@@ -1,12 +1,10 @@
 #include "Product.h"
 
-Product::Product()
-{
-
-}
-
-Product::Product(const QString &name, double price, double weight)
-    : m_name(name), m_price(price), m_weight(weight)
+Product::Product(const QString &name, double price, double weight, QObject *parent)
+    : QObject(parent),
+      m_name(name),
+      m_price(price),
+      m_weight(weight)
 {
 
 }
