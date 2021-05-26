@@ -18,9 +18,7 @@ public:
     ProductModel(QObject *parent = 0);
 
     void addProduct(const Product &product);
-
     int rowCount(const QModelIndex & parent = QModelIndex()) const;
-
     QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
 
 protected:

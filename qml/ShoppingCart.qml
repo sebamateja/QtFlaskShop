@@ -17,11 +17,12 @@ Item {
 
     ListView {
         id: list
+
         anchors.fill: parent
         anchors.topMargin: 100
 
 
-        model: mylist
+        model: root.myList
         orientation: Qt.Vertical
 
         Component {

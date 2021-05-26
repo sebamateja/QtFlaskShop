@@ -34,27 +34,29 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
 
-    QJsonArray array = readJson(":/resource/data.json");
+//    QJsonArray array = readJson(":/resource/data.json");
 
-    ProductModel productList;
+//    ProductModel shopOffer;
 
-    foreach (const QJsonValue &value, array) {
-        QJsonObject obj = value.toObject();
+//    foreach (const QJsonValue &value, array) {
+//        QJsonObject obj = value.toObject();
 
-        productList.addProduct(Product(
-            obj.value("name").toString(),
-            obj.value("price").toDouble(),
-            obj.value("name").toDouble()));
-    }
+//        shopOffer.addProduct(Product(
+//            obj.value("name").toString(),
+//            obj.value("price").toDouble(),
+//            obj.value("name").toDouble()));
+//    }
 
-    qmlRegisterSingletonType<ShoppingCart>("shoppingCart", 1, 0, "ShoppingCart", &ShoppingCart::qmlInstance);
+//    qDebug() << shopOffer.rowCount();
 
-    ShopppingCartModel cart;
+//    qmlRegisterSingletonType<ShoppingCart>("shoppingCart", 1, 0, "ShoppingCart", &ShoppingCart::qmlInstance);
+
+//    ShopppingCartModel cart;
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/qml/main.qml"));
-    engine.rootContext()->setContextProperty("productList", &productList);
-    engine.rootContext()->setContextProperty("cart", &cart);
+//    engine.rootContext()->setContextProperty("myShopOffer", &shopOffer);
+//    engine.rootContext()->setContextProperty("cart", &cart);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)

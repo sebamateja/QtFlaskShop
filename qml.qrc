@@ -5,5 +5,7 @@
         <file>qml/Settings.qml</file>
         <file>qml/ProductList.qml</file>
         <file>resource/data.json</file>
+        <file>qml/View/MainAppView.qml</file>
+        <file>qml/ViewModel/MainApp.qml</file>
     </qresource>
 </RCC>

@@ -46,15 +46,19 @@ Item {
     }
 
     ListView {
+        id: listView
+
         anchors.fill: parent
         anchors.topMargin: rowLabels.height+10
 
-
-        model: productList
+        model: myShopOffer
         orientation: Qt.Vertical
 
-        Component {
+
+
+        delegate: Component {
             id: productDelegate
+
             Item {
                 height: 100
                 width: parent.width
@@ -121,6 +125,5 @@ Item {
                 }
             }
         }
-        delegate: productDelegate
     }
 }

@@ -18,7 +18,8 @@ SOURCES += \
         src/productdata.cpp \
         src/productmodel.cpp \
         src/shoppingcart.cpp \
-        src/shopppingcartmodel.cpp
+        src/shopppingcartmodel.cpp \
+        src/ShopService.cpp
 
 RESOURCES += qml.qrc
 
@@ -39,4 +40,5 @@ HEADERS += \
     src/productdata.h \
     src/productmodel.h \
     src/shoppingcart.h \
-    src/shopppingcartmodel.h
+    src/shopppingcartmodel.h \
+    src/ShopService.h

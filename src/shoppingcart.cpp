@@ -46,6 +46,7 @@ void ShoppingCart::addProduct(QString name, double price, double weight)
 
 QList<ShoppingProductPosition> ShoppingCart::getList()
 {
+//    return QVariant::fromValue(m_shoppingList);
     return m_shoppingList;
 }
 
