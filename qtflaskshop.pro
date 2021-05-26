@@ -1,6 +1,6 @@
 QT += quick
 
-CONFIG += c++11
+CONFIG += c++14
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -16,9 +16,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         src/Product.cpp \
         src/main.cpp \
-        src/productmodel.cpp \
-        src/shoppingcart.cpp \
-        src/shopppingcartmodel.cpp \
+#        src/productmodel.cpp \
+#        src/shoppingcart.cpp \
+#        src/shopppingcartmodel.cpp \
         src/ShopService.cpp \
         src/ShopOfferModel.cpp
 
@@ -39,8 +39,8 @@ DISTFILES +=
 
 HEADERS += \
     src/Product.h \
-    src/productmodel.h \
-    src/shoppingcart.h \
-    src/shopppingcartmodel.h \
+#    src/productmodel.h \
+#    src/shoppingcart.h \
+#    src/shopppingcartmodel.h \
     src/ShopService.h \
     src/ShopOfferModel.h

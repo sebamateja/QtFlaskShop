@@ -12,7 +12,7 @@ class Product : public QObject
     Q_PROPERTY(int amount READ amount WRITE setAmount NOTIFY amountChanged)
 
 public:
-    Product(const QString &name, double price, double weight, QObject *parent = nulltpr);
+    Product(const QString &name, double price, double weight, QObject *parent = nullptr);
     virtual ~Product() = default;
 
     QString name() const;

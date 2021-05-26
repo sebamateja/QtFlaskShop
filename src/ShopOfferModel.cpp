@@ -16,6 +16,11 @@ QHash<int, QByteArray> ShopOfferModel::roleNames() const
     return roles;
 }
 
+int ShopOfferModel::rowCount(const QModelIndex &) const
+{
+    return m_data.size();
+}
+
 QVariant ShopOfferModel::data(const QModelIndex & index, int role) const {
     const int row = index.row();
 
@@ -47,6 +52,13 @@ void ShopOfferModel::add(Product *item)
 Product *ShopOfferModel::get(int index)
 {
     return m_data.at(index);
+}
+
+void ShopOfferModel::clear()
+{
+    beginResetModel();
+    m_data.clear();
+    endResetModel();
 }
 
 bool ShopOfferModel::isIndexValid(int index) const

@@ -1,68 +1,26 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include <QFile>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QJsonArray>
+#include <QScopedPointer>
 #include <QDebug>
 #include <QQuickView>
-#include "Product.h"
-#include "productmodel.h"
-#include "shoppingcart.h"
-#include "shopppingcartmodel.h"
-
-QJsonArray readJson(QString filename) {
-    QString value;
-
-    QFile file;
-
-    file.setFileName(filename);
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
-    value = file.readAll();
-    file.close();
-
-    QJsonDocument doc = QJsonDocument::fromJson(value.toUtf8());
-
-    QJsonObject jsonObject = doc.object();
-
-    return jsonObject.value("products").toArray();
-}
+#include "ShopService.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
 
-//    QJsonArray array = readJson(":/resource/data.json");
-
-//    ProductModel shopOffer;
-
-//    foreach (const QJsonValue &value, array) {
-//        QJsonObject obj = value.toObject();
-
-//        shopOffer.addProduct(Product(
-//            obj.value("name").toString(),
-//            obj.value("price").toDouble(),
-//            obj.value("name").toDouble()));
-//    }
-
-//    qDebug() << shopOffer.rowCount();
-
-//    qmlRegisterSingletonType<ShoppingCart>("shoppingCart", 1, 0, "ShoppingCart", &ShoppingCart::qmlInstance);
-
-//    ShopppingCartModel cart;
+    QScopedPointer<ShopService, QScopedPointerDeleteLater> m_shopService;
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/qml/main.qml"));
-//    engine.rootContext()->setContextProperty("myShopOffer", &shopOffer);
-//    engine.rootContext()->setContextProperty("cart", &cart);
+    engine.rootContext()->setContextProperty("shopService", &m_shopService);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
-
 
     engine.load(url);
 

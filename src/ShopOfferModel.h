@@ -2,7 +2,7 @@
 #define SHOP_OFFER_MODEL_H
 
 #include <QAbstractListModel>
-#include <QObject>
+#include <QVariant>
 #include "Product.h"
 
 class ShopOfferModel : public QAbstractListModel
@@ -14,20 +14,24 @@ public:
     virtual ~ShopOfferModel() = default;
 
     enum ShopOfferRoles {
-        NameRole = Qt::UserRole,
+        NameRole,
         PriceRole,
         WeightRole
     };
 
     QHash<int, QByteArray> roleNames() const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const override;
 
+    void add(Product *item);
     Product *get(int index);
+    void clear();
 
     const QList<Product*> &items() const
     {
         return m_data;
     }
+
 private:
     QList<Product *> m_data;
 
