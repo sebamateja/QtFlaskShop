@@ -7,7 +7,7 @@
 #include <QJsonArray>
 #include <QDebug>
 #include <QQuickView>
-#include "productdata.h"
+#include "Product.h"
 #include "productmodel.h"
 #include "shoppingcart.h"
 #include "shopppingcartmodel.h"

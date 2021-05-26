@@ -6,7 +6,7 @@
 #include <QJSEngine>
 #include <QDebug>
 #include <QVariant>
-#include "productdata.h"
+#include "Product.h"
 
 struct ShoppingProductPosition {
     Product product;

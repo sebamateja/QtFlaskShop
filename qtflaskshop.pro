@@ -14,12 +14,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        src/Product.cpp \
         src/main.cpp \
-        src/productdata.cpp \
         src/productmodel.cpp \
         src/shoppingcart.cpp \
         src/shopppingcartmodel.cpp \
-        src/ShopService.cpp
+        src/ShopService.cpp \
+        src/ShopOfferModel.cpp
 
 RESOURCES += qml.qrc
 
@@ -37,8 +38,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES +=
 
 HEADERS += \
-    src/productdata.h \
+    src/Product.h \
     src/productmodel.h \
     src/shoppingcart.h \
     src/shopppingcartmodel.h \
-    src/ShopService.h
+    src/ShopService.h \
+    src/ShopOfferModel.h

@@ -1,11 +1,11 @@
-#include "productdata.h"
+#include "Product.h"
 
 Product::Product()
 {
 
 }
 
-Product::Product(const QString &name, const double &price, const double &weight)
+Product::Product(const QString &name, double price, double weight)
     : m_name(name), m_price(price), m_weight(weight)
 {
 

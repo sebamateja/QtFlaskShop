@@ -1,5 +1,5 @@
-#ifndef PRODUCTDATA_H
-#define PRODUCTDATA_H
+#ifndef PRODUCT_H
+#define PRODUCT_H
 
 #include <QObject>
 
@@ -13,7 +13,7 @@ class Product : public QObject
 
 public:
     Product();
-    Product(const QString &name, const double &price, const double &weight);
+    Product(const QString &name, double price, double weight);
     virtual ~Product() = default;
 
     QString name() const;
@@ -40,4 +40,4 @@ private:
     int m_amount = 0;
 };
 
-#endif // PRODUCTDATA_H
+#endif // PRODUCT_H
