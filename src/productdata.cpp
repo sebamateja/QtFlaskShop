@@ -8,6 +8,7 @@ Product::Product()
 Product::Product(const QString &name, const double &price, const double &weight)
     : m_name(name), m_price(price), m_weight(weight)
 {
+
 }
 
 QString Product::name() const
@@ -30,22 +31,44 @@ int Product::amount() const
     return m_amount;
 }
 
-void Product::setName(QString name)
+void Product::setName(const QString &name)
 {
-    m_name = name;
+    if (m_name != name)
+    {
+        m_name = name;
+        emit nameChanged(m_name);
+    }
 }
 
 void Product::setPrice(double price)
 {
-    m_price = price;
+    if (!qFuzzyCompare(m_price, price))
+    {
+        m_price = price;
+        emit priceChanged(m_price);
+    }
 }
 
 void Product::setWeight(double weight)
 {
-    m_weight = weight;
+    if (!qFuzzyCompare(m_weight, weight))
+    {
+        m_weight = weight;
+        emit weightChanged(m_weight);
+    }
+}
+
+void Product::setAmount(int amount)
+{
+    if (m_amount != amount)
+    {
+        m_amount = amount;
+        emit amountChanged(m_amount);
+    }
 }
 
 void Product::addAmount()
 {
     m_amount++;
+    emit amountChanged(m_amount);
 }
