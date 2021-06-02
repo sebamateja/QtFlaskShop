@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/qml/main.qml"));
-    engine.rootContext()->setContextProperty("shopService", &m_shopService);
+    engine.rootContext()->setContextProperty("shopService", m_shopService.get());
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)

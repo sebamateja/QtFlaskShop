@@ -17,7 +17,7 @@ class ShopService : public QObject
 public:
     ShopService(QObject *parent = nullptr);
 
-    ShopOfferModel *model()
+    ShopOfferModel *shopOfferModel()
     {
         return &m_shopOfferModel;
     }
