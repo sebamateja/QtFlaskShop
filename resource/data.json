@@ -1,29 +1,58 @@
 {
     "products":[
         {
-            "name":"Chleb",
+            "id":1,
+            "name":"Bread",
             "price":450,
             "weight":0.5
         },
         {
-            "name":"Piwo",
+            "id":2,
+            "name":"Beer",
             "price":350,
             "weight":0.5
         },
         {
-            "name":"Mleko",
+            "id":3,
+            "name":"Milk",
             "price":400,
             "weight":0.5
-        }
-        ,{
-            "name":"Margaryna",
+        },
+        {
+            "id":4,
+            "name":"Butter",
             "price":250,
             "weight":0.5
-        }
-        ,{
-            "name":"Sok",
+        },
+        {
+            "id":5,
+            "name":"Apple Juice",
             "price":390,
             "weight":0.5
+        },
+        {
+            "id":6,
+            "name":"Test product 1 Long name of the product Long name of the product",
+            "price":390,
+            "weight":0.5
+        },
+        {
+            "id":7,
+            "name":"Test product 2",
+            "price":690,
+            "weight":2.5
+        },
+        {
+            "id":8,
+            "name":"Test product 3",
+            "price":1090,
+            "weight":0.5
+        },
+        {
+            "id":9,
+            "name":"Test product 4",
+            "price":1390,
+            "weight":0.8
         }
     ]
 }

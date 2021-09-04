@@ -2,8 +2,14 @@
     <qresource prefix="/">
         <file>qml/main.qml</file>
         <file>qml/ShoppingCart.qml</file>
-        <file>qml/Settings.qml</file>
-        <file>qml/ProductList.qml</file>
+        <file>qml/ShopOffer.qml</file>
         <file>resource/data.json</file>
+        <file>qml/ShopOfferDelegate.qml</file>
+        <file>qml/ShopCart.qml</file>
+        <file>qml/SettingsView.qml</file>
+        <file>resource/Images/basket-cart-icon.png</file>
+        <file>resource/Images/shop-icon.png</file>
+        <file>qml/ShopCartDelegate.qml</file>
+        <file>resource/Images/settings-icon.png</file>
     </qresource>
 </RCC>
