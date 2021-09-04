@@ -1,6 +1,6 @@
 QT += quick
 
-CONFIG += c++11
+CONFIG += c++17
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -15,10 +15,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         src/main.cpp \
-        src/productdata.cpp \
-        src/productmodel.cpp \
-        src/shoppingcart.cpp \
-        src/shopppingcartmodel.cpp
+        src/ShopApp.cpp \
+        src/ShopService.cpp \
+        src/ShopOfferModel.cpp \
+        src/ShopCartModel.cpp \
+        src/ShopTypes.cpp
 
 RESOURCES += qml.qrc
 
@@ -36,7 +37,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES +=
 
 HEADERS += \
-    src/productdata.h \
-    src/productmodel.h \
-    src/shoppingcart.h \
-    src/shopppingcartmodel.h
+    src/ShopApp.h \
+    src/ShopService.h \
+    src/ShopOfferModel.h \
+    src/ShopCartModel.h \
+    src/ShopTypes.h

@@ -1,59 +1,29 @@
-import QtQuick 2.12
-import QtQuick.Window 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Layouts 1.12
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 
-ApplicationWindow {
-    visible: true
-    width: 640
-    height: 480
-    title: qsTr("Hello World")
+Item {
+    height: 1080
+    width: 1920
 
-    // Probably better to use StackView here
-    // not different components and visible changes
-    header: ToolBar {
-        RowLayout {
-            anchors.fill: parent
-            ToolButton {
-                text: qsTr("Products")
-                onClicked: {
-                    shoppingCart.visible = false
-                    settings.visible = false
-                    productList.visible = true
-                }
-            }
-            ToolButton {
-                text: qsTr("Cart")
-                onClicked: {
-                    settings.visible = false
-                    productList.visible = false
-                    shoppingCart.visible = true
-                }
-            }
-            ToolButton {
-                text: qsTr("Settings")
-                onClicked: {
-                    productList.visible = false
-                    shoppingCart.visible = false
-                    settings.visible = true
-                }
-            }
-        }
+    SwipeView {
+        id: swipeView
+
+        anchors.fill: parent
+
+        currentIndex: 0
+
+        ShopOffer {}
+        ShopCart {}
+        SettingsView {}
     }
 
-    ProductList {
-        id: productList
-        visible: true
-    }
+    PageIndicator {
+        id: indicator
 
-    ShoppingCart {
-        id: shoppingCart
+        count: swipeView.count
+        currentIndex: swipeView.currentIndex
 
-        visible: false
-    }
-
-    Settings {
-        id: settings
-        visible: false
+        anchors.bottom: swipeView.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 }
